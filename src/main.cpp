@@ -1,3 +1,4 @@
+// Copyright 2022 UNN-IASR
 #include <iostream>
 #include "Automata.h"
 
@@ -5,7 +6,7 @@ void main()
 {
 	setlocale(LC_ALL, "Russian");
 	Automata coffe;
-	coffe.on(); // off on возвращает automata() мб функцию в int
+	coffe.on(); // off on ГўГ®Г§ГўГ°Г Г№Г ГҐГІ automata() Г¬ГЎ ГґГіГ­ГЄГ¶ГЁГѕ Гў int
 	coffe.etMenu();
 	coffe.coin(30);
 	coffe.choice();
