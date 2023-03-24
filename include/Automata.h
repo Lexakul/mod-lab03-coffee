@@ -17,7 +17,7 @@ class Automata {
 public:
 	void SetState(STATES state) { this->state = state; }
 	void SetCash(int cash) { this->cash = cash; }
-	int GetCash(int cash) { return cash; } 
+	int GetCash() { return cash; } 
 	int coin(int rub);
 	int choice();
 	int etMenu();
