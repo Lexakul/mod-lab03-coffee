@@ -78,6 +78,7 @@ int Automata::check()
         }
         return 0;
     }
+    return 0;
 }
 
 int Automata::cancel()
