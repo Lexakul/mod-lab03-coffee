@@ -1,16 +1,17 @@
+// Copyright 2022 UNN-IASR
 #include "Automata.h"
 #include <iostream>
 
 int Automata::on()
 {
-    cout << "Àâòîìàò âêëþ÷åí." << endl;
+    cout << "Ã€Ã¢Ã²Ã®Ã¬Ã Ã² Ã¢ÃªÃ«Ã¾Ã·Ã¥Ã­." << endl;
     SetState(WAIT);
     return 0;
 }
 
 int Automata::off()
 {
-    cout << "Àâòîìàò âûêëþ÷åí." << endl;
+    cout << "Ã€Ã¢Ã²Ã®Ã¬Ã Ã² Ã¢Ã»ÃªÃ«Ã¾Ã·Ã¥Ã­." << endl;
     SetState(OFF);
     return 0;
 }
@@ -26,7 +27,7 @@ int Automata::initMenuWithPrices()
 
 int Automata::coin(int rub)
 {
-    //cout << "Âíåñèòå íàëè÷íûå" << endl;
+    //cout << "Ã‚Ã­Ã¥Ã±Ã¨Ã²Ã¥ Ã­Ã Ã«Ã¨Ã·Ã­Ã»Ã¥" << endl;
     if (state == WAIT || state == ACCEPT)
     {
         SetCash(rub);
@@ -34,7 +35,7 @@ int Automata::coin(int rub)
         return rub;
     }
     else {
-        cout << "×òî òî ïîøëî íå òàê " << endl;
+        cout << "Ã—Ã²Ã® Ã²Ã® Ã¯Ã®Ã¸Ã«Ã® Ã­Ã¥ Ã²Ã Ãª " << endl;
         return 0;
     }
 }
@@ -56,7 +57,7 @@ STATES Automata::getState()
 int Automata::choice()
 {
     if (state == ACCEPT) {
-        cout << "Âûáðàííûé íàïèòîê " << menu[1] << endl;
+        cout << "Ã‚Ã»Ã¡Ã°Ã Ã­Ã­Ã»Ã© Ã­Ã Ã¯Ã¨Ã²Ã®Ãª " << menu[1] << endl;
         SetState(CHECK);
         return 1;
     }
@@ -73,10 +74,10 @@ int Automata::check()
         }
         else
         {
-            cout << "Íåäîñòàòî÷íî ñðåäñòâ " << endl;
+            cout << "ÃÃ¥Ã¤Ã®Ã±Ã²Ã Ã²Ã®Ã·Ã­Ã® Ã±Ã°Ã¥Ã¤Ã±Ã²Ã¢ " << endl;
         }
         return 0;
-    };
+    }
 }
 
 int Automata::cancel()
@@ -88,12 +89,12 @@ int Automata::cancel()
 int Automata::cook()
 {
     if (state == CHECK) {
-        cout << "Îæèäàéòå èäåò ïðèãîòîâëåíèå íàïèòêà " << endl;
+        cout << "ÃŽÃ¦Ã¨Ã¤Ã Ã©Ã²Ã¥ Ã¨Ã¤Ã¥Ã² Ã¯Ã°Ã¨Ã£Ã®Ã²Ã®Ã¢Ã«Ã¥Ã­Ã¨Ã¥ Ã­Ã Ã¯Ã¨Ã²ÃªÃ  " << endl;
         SetState(COOK);
         if (cash > 0) {
-            cout << "Íàïèòîê ãîòîâ. Íå çàáóäüòå çàáðàòü ñäà÷ó. " << cash << endl;
+            cout << "ÃÃ Ã¯Ã¨Ã²Ã®Ãª Ã£Ã®Ã²Ã®Ã¢. ÃÃ¥ Ã§Ã Ã¡Ã³Ã¤Ã¼Ã²Ã¥ Ã§Ã Ã¡Ã°Ã Ã²Ã¼ Ã±Ã¤Ã Ã·Ã³. " << cash << endl;
         }
-        else{ cout << "Íàïèòîê ãîòîâ. " << endl; }
+        else{ cout << "ÃÃ Ã¯Ã¨Ã²Ã®Ãª Ã£Ã®Ã²Ã®Ã¢. " << endl; }
         finish();
     }
     return 0;
