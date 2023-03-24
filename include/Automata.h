@@ -1,6 +1,8 @@
-#pragma once
-#include <string>;
-#include <vector>;
+// Copyright 2022 UNN-IASR
+#ifndef INCLUDE_AUTOMATA_H_
+#define INCLUDE_AUTOMATA_H_
+#include <string>
+#include <vector>
 using namespace std;
 
 enum STATES {
@@ -38,3 +40,4 @@ private:
 	int cancel();
 	int finish(); 
 };
+#endif  // INCLUDE_AUTOMATA_H_
