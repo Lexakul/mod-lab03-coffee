@@ -33,7 +33,7 @@ class Automata {
 
  private:
     int cash;
-    std::vector<string> menu;
+    std::vector<std::string> menu;
     std::vector<int> prices;
     STATES state;
     int initMenuWithPrices();
