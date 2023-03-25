@@ -3,19 +3,19 @@
 #include <iostream>
 
 int Automata::on() {
-    cout << "Automat on" << endl;
+    std::cout << "Automat on" << std::endl;
     SetState(WAIT);
     return 0;
 }
 
 int Automata::off() {
-    cout << "Automat off" << endl;
+    std::cout << "Automat off" << std::endl;
     SetState(OFF);
     return 0;
 }
 
 int Automata::initMenuWithPrices() {
-    string name[] = { "Raf", "Latte", "Americano" };
+    std::string name[] = { "Raf", "Latte", "Americano" };
     int prices[] = { 50, 20, 10 };
     menu.insert(menu.begin(), name, name + 3);
     this->prices.insert(this->prices.begin(), prices, prices + 3);
@@ -28,26 +28,26 @@ int Automata::coin(int rub) {
         SetState(ACCEPT);
         return rub;
     } else {
-        cout << "error " << endl;
+        std::cout << "error " << std::endl;
         return 0;
     }
 }
 
 int Automata::etMenu() {
     for (int i = 0; i < size(menu); i++) {
-        cout << menu[i] << ' ' << prices[i] << endl;
+        std::cout << menu[i] << ' ' << prices[i] << std::endl;
     }
     return 0;
 }
 
 STATES Automata::getState() {
-    cout << state << endl;
+    std::cout << state << std::endl;
     return state;
 }
 
 int Automata::choice() {
     if (state == ACCEPT) {
-        cout << "selected drink " << menu[1] << endl;
+        std::cout << "selected drink " << menu[1] << std::endl;
         SetState(CHECK);
         return 1;
     } else {
@@ -60,7 +60,7 @@ int Automata::check() {
         if (cash >= prices[1]) {
             cash = cash - prices[1];
         } else {
-            cout << "error " << endl;
+            std::cout << "error " << std::endl;
         }
         return 0;
     }
@@ -74,11 +74,11 @@ int Automata::cancel() {
 
 int Automata::cook() {
     if (state == CHECK) {
-        cout << "cook " << endl;
+        std::cout << "cook " << std::endl;
         SetState(COOK);
         if (cash > 0) {
-            cout << "take cash " << cash << endl;
-        } else { cout << "error " << endl; }
+            std::cout << "take cash " << cash << std::endl;
+        } else { std::cout << "error " << std::endl; }
         finish();
     }
     return 0;
