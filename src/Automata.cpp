@@ -16,15 +16,14 @@ int Automata::off() {
 
 int Automata::initMenuWithPrices() {
     string name[] = { "Raf", "Latte", "Americano" };
-    int prices[] = { 50,20,10 };
+    int prices[] = { 50, 20, 10 };
     menu.insert(menu.begin(), name, name + 3);
     this->prices.insert(this->prices.begin(), prices, prices + 3);
     return 0;
 }
 
 int Automata::coin(int rub) {
-    if (state == WAIT || state == ACCEPT)
-    {
+    if (state == WAIT || state == ACCEPT) {
         SetCash(rub);
         SetState(ACCEPT);
         return rub;
