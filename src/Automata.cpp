@@ -34,7 +34,7 @@ int Automata::coin(int rub) {
 }
 
 int Automata::etMenu() {
-    for (int i = 0; i < size(menu); i++) {
+    for (int i = 0; i < std::size(menu); i++) {
         std::cout << menu[i] << ' ' << prices[i] << std::endl;
     }
     return 0;
