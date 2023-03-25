@@ -2,8 +2,7 @@
 #include <iostream>
 #include "Automata.h"
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "Russian");
     Automata coffe;
     coffe.on();

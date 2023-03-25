@@ -2,19 +2,19 @@
 #include "Automata.h"
 #include <iostream>
 
-int Automata::on(){
+int Automata::on() {
     cout << "Automat on" << endl;
     SetState(WAIT);
     return 0;
 }
 
-int Automata::off(){
+int Automata::off() {
     cout << "Automat off" << endl;
     SetState(OFF);
     return 0;
 }
 
-int Automata::initMenuWithPrices(){
+int Automata::initMenuWithPrices() {
     string name[] = { "Raf", "Latte", "Americano" };
     int prices[] = { 50,20,10 };
     menu.insert(menu.begin(), name, name + 3);
@@ -22,49 +22,45 @@ int Automata::initMenuWithPrices(){
     return 0;
 }
 
-int Automata::coin(int rub){
+int Automata::coin(int rub) {
     if (state == WAIT || state == ACCEPT)
     {
         SetCash(rub);
         SetState(ACCEPT);
         return rub;
-    }
-    else {
+    } else {
         cout << "error " << endl;
         return 0;
     }
 }
 
-int Automata::etMenu(){
+int Automata::etMenu() {
     for (int i = 0; i < size(menu); i++) {
         cout << menu[i] << ' ' << prices[i] << endl;
     }
     return 0;
 }
 
-STATES Automata::getState(){
+STATES Automata::getState() {
     cout << state << endl;
     return state;
 }
 
-int Automata::choice(){
+int Automata::choice() {
     if (state == ACCEPT) {
         cout << "selected drink " << menu[1] << endl;
         SetState(CHECK);
         return 1;
-    }
-    else {
+    } else {
         return 0;
     }
 }
 
-int Automata::check(){
+int Automata::check() {
     if (state == CHECK) {
         if (cash >= prices[1]) {
             cash = cash - prices[1];
-        }
-        else
-        {
+        } else {
             cout << "error " << endl;
         }
         return 0;
@@ -72,25 +68,24 @@ int Automata::check(){
     return 0;
 }
 
-int Automata::cancel(){
+int Automata::cancel() {
     SetState(WAIT);
     return 0;
 }
 
-int Automata::cook(){
+int Automata::cook() {
     if (state == CHECK) {
         cout << "cook " << endl;
         SetState(COOK);
         if (cash > 0) {
             cout << "take cash " << cash << endl;
-        }
-        else { cout << "error " << endl; }
+        } else { cout << "error " << endl; }
         finish();
     }
     return 0;
 }
 
-int Automata::finish(){
+int Automata::finish() {
     SetState(WAIT);
     return 0;
 }

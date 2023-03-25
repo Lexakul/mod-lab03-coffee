@@ -3,7 +3,6 @@
 #define INCLUDE_AUTOMATA_H_
 #include <string>
 #include <vector>
-using namespace std;
 
 enum STATES {
     OFF,
@@ -14,7 +13,7 @@ enum STATES {
 };
 
 class Automata {
-public:
+ public:
     void SetState(STATES state) { this->state = state; }
     void SetCash(int cash) { this->cash = cash; }
     int GetCash() { return cash; }
@@ -27,11 +26,12 @@ public:
     int on();
     int off();
     Automata() {
-	    cash = 0;
-	    SetState(OFF);
-	    initMenuWithPrices();
+        cash = 0;
+        SetState(OFF);
+        initMenuWithPrices();
     }
-private:
+
+ private:
     int cash;
     vector<string> menu;
     vector<int> prices;
